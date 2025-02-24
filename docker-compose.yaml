@@ -16,7 +16,7 @@ x-spark-common: &spark-common
   networks:
     datamasterylab : {}
 
-    
+
 services:
   zookeeper:
     image: confluentinc/cp-zookeeper:7.4.0
@@ -89,8 +89,10 @@ services:
 
     networks:
         datamasterylab: {}
-
-
+  spark-worker-1:
+    <<: *spark-common
+  spark-worker-2:
+    <<: *spark-common
     
 networks:
   datamasterylab: {}
